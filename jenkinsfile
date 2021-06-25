@@ -2,17 +2,20 @@ pipeline{
     agent any
 
     stages{
-        stage ('Complie Stage'){
-            steps {
-                withMaven(maven : 'maven3'){ 
+        stage ('Complie stage'){
+            steps{
+                withMaven(maven : 'maven3){ 
                     sh 'mvn clean compile'
                 }
             }
         }
-       stage ('Proceed to Dependency Check'){
-        input {
-           message "Do you want to go ahead"
-      }
-     }
+        stage ('Depend'){
+            input {
+                message "Do you want to proceed"
+            }
+            steps{
+                sh 'echo "check karo"'
+            }
+        }
     }
 }
