@@ -1,0 +1,13 @@
+pipeline{
+    agent any
+
+    stages{
+        stage ('Complie stage'){
+            steps{
+                withMaven(maven : 'maven3){ 
+                    sh 'mvn clean complie'
+                }
+            }
+        }
+    }
+}
