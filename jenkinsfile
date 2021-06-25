@@ -14,7 +14,10 @@ pipeline{
                 message "Do you want to proceed"
             }
             steps{
-                sh 'echo "check karo"'
+                dependencyCheck additionalArguments: '--format "ALL"', odcInstallation: 'depend'
+            }
+            steps{
+                dependencyCheckPublisher pattern: '/**dependency-check-report.xml'
             }
         }
     }
