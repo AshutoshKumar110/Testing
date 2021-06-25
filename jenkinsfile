@@ -20,7 +20,7 @@ pipeline{
         }
         stage ('Publish'){
             steps{
-                dependencyCheckPublisher pattern: '/**dependency-check-report.xml'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
             }
         }
     }
