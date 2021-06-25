@@ -16,6 +16,9 @@ pipeline{
             steps{
                 dependencyCheck additionalArguments: '--format "ALL"', odcInstallation: 'depend'
             }
+            
+        }
+        stage ('Publish'){
             steps{
                 dependencyCheckPublisher pattern: '/**dependency-check-report.xml'
             }
