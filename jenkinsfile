@@ -9,5 +9,10 @@ pipeline{
                 }
             }
         }
+       stage ('Proceed to Dependency Check'){
+        input {
+           message "Do you want to go ahead"
+      }
+     }
     }
 }
