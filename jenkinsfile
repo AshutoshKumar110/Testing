@@ -19,8 +19,11 @@ pipeline{
             
         }
         stage ('Python'){
-            steps{
-                sh python -c 'print("hello")'
+            steps {
+                sh '''#!/bin/bash
+                       echo "hello world"
+                       python3 --version
+                   '''
             }
         }
         stage ('Publish'){
