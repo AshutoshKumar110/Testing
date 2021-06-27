@@ -18,6 +18,11 @@ pipeline{
             }
             
         }
+        stage ('Python'){
+            steps{
+                sh python -c 'print("hello")'
+            }
+        }
         stage ('Publish'){
             steps{
                 dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
